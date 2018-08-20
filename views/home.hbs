@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Home Page</title> <!-- it gets the data in title.hbs-->
+    </head>        
+    <body style="font-family:verdana;">
+        {{> header}} <!-- refering to the header.hbs under <views> -->
+            
+            <p>{{welcome_message}} </p> <!-- it directly get the data in server.js-->
+        
+        <!--TO USE A PARTIAL FOOTER  -->
+        {{> footer}}  <!-- this is the syntax in inserting partial footer -->
+
+    </body>
+</html>

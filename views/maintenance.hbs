@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <!-- this gets the value what is declaired in the title.hbs w/c also refer to server.js -->
+        <title>Maintenance Page</title> {{!-- needs to declared title tags in here! }}--}}
+    </head>
+    <body style="font-family:verdana;">
+        {{> header}} <!-- refering to the header.hbs under <views> -->
+       
+        <h3>Comming Soon!</h3>
+        <p>{{welcome_message}} </p>
+           
+        <!--TO USE A PARTIAL FOOTER note: make sure you have a footer.hbs under partials folder and and declared under server.js-->
+        {{> footer}}  <!-- this is the syntax in inserting partial footer -->
+
+    </body>
+</html> 
