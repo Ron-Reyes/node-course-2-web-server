@@ -2,6 +2,10 @@ const express = require('express');
 const hbs = require('hbs');
 const fs = require('fs');
 
+// user use the env.PORT or use the port 3000 , then reference the "port" below at app.listen(port
+const port = process.env.PORT || 3000; //store all the ports that will use by the app. process.env is an object variable that stores all the data in the environment (cmd: set)
+
+
 var app = express();
  
 hbs.registerPartials(__dirname + '/views/partials/'); // include __dirname concatenate it with views folder and partial forlder. this contain the mostly use module like header/footer etc. any repetitive task
@@ -30,7 +34,7 @@ app.use((req, res, next) => { // logger: logs all the request come in to the ser
 //         //pageTitle: 'Maintenance Page',
 //         header: 'Maintenance',
 //         welcome_message: 'This site is currently being updated.',
-//     });
+//     }); 
 // });
 
 app.use(express.static(__dirname + '/public'));// this is call middleware, this is a third party add on. the  __dirname stores the node-web-server .  
@@ -70,6 +74,6 @@ app.get('/bad', (req, res) => {
     });
 });
 
-app.listen(3000, () =>{ //bind to the applicaton ported on the machine () => this is an optional function
-    console.log('Server is up on port 3000');
+app.listen(port, () =>{ //bind to the applicaton ported on the machine () => this is an optional function
+    console.log(`Server is up on port ${port}`);
 }); 
