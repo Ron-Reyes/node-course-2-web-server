@@ -67,6 +67,14 @@ app.get('/about', (req, res) => {
         //currentYear: new Date().getFullYear() 
     }); 
 });
+
+app.get('/project', (req, res) => {
+    res.render('project.hbs', {
+        pageTitle: 'Project',
+        header: 'Project',
+        welcome_message: 'Building a new project.'
+    });
+});
     
 app.get('/bad', (req, res) => {
     res.send({
